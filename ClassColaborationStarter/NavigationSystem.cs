@@ -13,11 +13,32 @@ namespace ClassColaborationStarter
         //Tilføj konstruktør, ToString metode og en metode Start der
         //udskriver at Navigationssystemet er startet
 
-        public NavigationSystem() { }
+        //auto properties
+        public string Producer { get; set; }
+        public string DisplayType { get; set; }
+        public string Description { get; set; }
+        public double Co2FromProduction { get; set; }
+
+        //constructor
+        public NavigationSystem(string producer, string displaytype, string description, double co2fromproduction)
+        {
+            Producer = producer;
+            DisplayType = displaytype;
+            Description = description;
+            Co2FromProduction = co2fromproduction;
+        }
+
+        //methods
+        public void Start()
+        {
+            Console.WriteLine($"Navigation system online. Producer {Producer}");
+        }
+
 
         public override string ToString()
         {
-            return "NavigationSystem info ";
+            return $"Producer: {Producer}. Display type: {DisplayType}. Description: {Description}. CO2 production of navigation system: {Co2FromProduction}";
         }
+
     }
 }
